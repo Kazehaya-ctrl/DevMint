@@ -11,8 +11,6 @@ export default function App() {
       <section className="min-h-screen w-full pt-20 flex-grow">
         <Landing />
         <Section2 />
-        <Section2 />
-        <Section2 />
       </section>
 
       </main>

@@ -2,12 +2,13 @@ import List from '../components/List';
 import AnimatedCubes from '../components/Cubes';
 import { ReactTyped } from 'react-typed';
 import { motion } from 'framer-motion';
+import { Spotlight } from '../components/Spotlight';
 
 export default function Landing() {
     return (
       <div className="min-h-[80vh] w-full flex items-center justify-center bg-[#000000] bg-[linear-gradient(to_right,#ffffff15_2px,transparent_2px),linear-gradient(to_bottom,#ffffff15_2px,transparent_2px)] [background-size:50px_40px]">
-
-            <div className="flex mt-10 flex-col md:flex-row md:space-x-12 items-center justify-center w-full max-w-6xl">
+        <Spotlight/>
+            <div className="flex mt-10 flex-col md:flex-row md:space-x-24 items-center justify-center w-full max-w-7xl">
                 {/* Left Section */}
                 <motion.div 
                     initial={{ opacity: 0, x: -100 }} 

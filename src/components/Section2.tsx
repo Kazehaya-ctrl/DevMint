@@ -1,9 +1,13 @@
 import { motion } from 'framer-motion';
+import { Spotlight } from './Spotlight';
+import { TextGenerateEffect } from './Textgenerator';
 
 export function Section2() {
     return (
         <div className="w-full bg-[#000000] text-white py-16 flex flex-col items-center">
+            <Spotlight />
             <h1 className="text-4xl font-bold mb-10">Why Choose Us?</h1>
+            <h5 className='p-5 text-blue-700'>We offer a seamless and structured process designed for your success. Take a look at our approach and discover why we stand out.</h5>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-6 max-w-6xl">
                 {[...Array(6)].map((_, index) => (
                     <motion.div 
