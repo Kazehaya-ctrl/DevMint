@@ -11,13 +11,38 @@ export default {
       },
       animation: {
         'infinite-scroll': 'infinite-scroll 25s linear infinite',
-     },
-    keyframes: {
+        'typing': 'typing 4s steps(7) infinite',
+        'gradient': 'gradient 15s ease infinite',
+        spotlight: "spotlight 2s ease .75s 1 forwards",
+      },
+      keyframes: {
+        spotlight: {
+          "0%": {
+            opacity: 0,
+            transform: "translate(-72%, -62%) scale(0.5)",
+          },
+          "100%": {
+            opacity: 1,
+            transform: "translate(-50%,-40%) scale(1)",
+          },
+        },
         'infinite-scroll': {
             from: { transform: 'translateX(0)' },
             to: { transform: 'translateX(-100%)' },
+        },
+        'typing': {
+            '0%': { width: '0' },
+            '30%': { width: '100%' },
+            '80%': { width: '100%' },
+            '90%': { width: '0' },
+            '100%': { width: '0' }
+        },
+        'gradient': {
+          '0%': { 'background-position': '0% 50%' },
+          '50%': { 'background-position': '100% 50%' },
+          '100%': { 'background-position': '0% 50%' },
         }
-    }                    
+      }                    
     },
   },
   plugins: [],

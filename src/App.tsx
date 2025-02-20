@@ -9,12 +9,13 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
+    <div className="min-h-screen flex flex-col">
       <Navbar />
-      <Landing />
-    </>
+      <main className="flex-1">
+        <Landing />
+      </main>
+    </div>
   )
 }
 
 export default App
-  
