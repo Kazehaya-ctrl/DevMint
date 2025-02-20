@@ -1,48 +1,87 @@
-import List from '../components/List'
-import AnimatedCubes from '../components/Cubes'
+import List from '../components/List';
+import AnimatedCubes from '../components/Cubes';
+import { ReactTyped } from 'react-typed';
+import { motion } from 'framer-motion';
 
 export default function Landing() {
     return (
-        <div className="h-[90vh] w-full flex flex-col md:flex-row items-center justify-between bg-[#000000] bg-[linear-gradient(to_right,#ffffff15_2px,transparent_2px),linear-gradient(to_bottom,#ffffff15_2px,transparent_2px)] [background-size:50px_40px]">
-            <div className="md:w-1/2 space-y-6 pl-4 items-center translate-x-64">
+      <div className="h-screen w-full flex items-center justify-center bg-[#000000] bg-[linear-gradient(to_right,#ffffff15_2px,transparent_2px),linear-gradient(to_bottom,#ffffff15_2px,transparent_2px)] [background-size:50px_40px]">
 
-              <div className="flex items-center backdrop-blur-md bg-white/30 p-1.5 mr-9 rounded-lg w-fit">
-                <div className="bg-blue-600 text-xs text-white font-bold px-3 py-1 rounded-md">
-                  NEW
-                </div>
-                <div className="bg-opacity-20 text-xs px-3 py-1 text-white rounded-r-md">
-                  Innovation Solution
-                </div>
-              </div>
-              
-              <h1 className="text-5xl md:text-6.5xl  text-white font-bold leading-tight">
-                    Powering Your Creative <br /> Dreams, Embrace <br />
-                    <span className="inline-block overflow-hidden text-blue-600 whitespace-nowrap animate-typing w-[4.4em]">
-                        DEVMINT.
-                    </span>
-                </h1>
-              
-              <p className="text-gray-400 text-left max-w-md">
-              From Software Development to Design Services, we deliver tailored solutions for every visionary idea using cutting-edge technology.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 pt-4 ">
-                <button className="bg-white text-black px-6 py-3 text-sm rounded-lg hover:bg-gray-200 hover:scale-105 transition">
-                  Explore Work
-                </button>
-                <button className=" bg-white/30 text-white backdrop-blur-md text-sm px-6 py-3 rounded-lg hover:bg-opacity-20 hover:scale-105 transition">
-                  What is Devmint?
-                </button>
-              </div>
-              
-              <div className="pt-16 flex space-x-6 mr-28 items-center">
-                <List />
-              </div>
+            <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-6xl">
+                {/* Left Section */}
+                <motion.div 
+                    initial={{ opacity: 0, x: -100 }} 
+                    animate={{ opacity: 1, x: 0 }} 
+                    transition={{ duration: 0.8, ease: 'easeOut' }}
+                    className="md:w-1/2 space-y-6 pl-4 items-center"
+                >
+                    {/* Tagline */}
+                    <motion.div 
+                        initial={{ opacity: 0, y: -20 }} 
+                        animate={{ opacity: 1, y: 0 }} 
+                        transition={{ duration: 0.6, delay: 0.3 }}
+                        className="flex items-center backdrop-blur-md bg-white/30 p-1.5 mr-9 rounded-lg w-fit shadow-lg"
+                    >
+                        <div className="bg-blue-700 text-xs text-white font-bold px-3 py-1 rounded-md">
+                            NEW
+                        </div>
+                        <div className="bg-opacity-20 text-xs px-3 py-1 text-white rounded-r-md">
+                            Innovation Solution
+                        </div>
+                    </motion.div>
+                    
+                    {/* Heading */}
+                    <h1 className="text-5xl md:text-6.5xl w-max text-white font-bold leading-tight">
+                        Powering Your Creative <br /> Dreams, Embrace <br />
+                        <ReactTyped className='text-blue-600' strings={["DEVMINT."]} typeSpeed={120} backSpeed={140} loop/>
+                    </h1>
+                    
+                    {/* Description */}
+                    <motion.p 
+                        initial={{ opacity: 0, y: 20 }} 
+                        animate={{ opacity: 1, y: 0 }} 
+                        transition={{ duration: 0.6, delay: 0.5 }}
+                        className="text-gray-400 text-left max-w-md"
+                    >
+                        From Software Development to Design Services, we deliver tailored solutions for every visionary idea using cutting-edge technology.
+                    </motion.p>
+                    
+                    {/* Buttons */}
+                    <motion.div 
+                        initial={{ opacity: 0, scale: 0.9 }} 
+                        animate={{ opacity: 1, scale: 1 }} 
+                        transition={{ duration: 0.5, delay: 0.7 }}
+                        className="flex flex-col sm:flex-row gap-4 pt-4"
+                    >
+                        <button className="bg-white text-black px-6 py-3 text-sm rounded-lg hover:bg-gray-200 hover:scale-105 transition-transform">
+                            Explore Work
+                        </button>
+                        <button className="bg-white/30 text-white backdrop-blur-md text-sm px-6 py-3 rounded-lg hover:bg-opacity-20 hover:scale-105 transition-transform">
+                            What is Devmint?
+                        </button>
+                    </motion.div>
+                    
+                    {/* List Component */}
+                    <motion.div 
+                        initial={{ opacity: 0, y: 20 }} 
+                        animate={{ opacity: 1, y: 0 }} 
+                        transition={{ duration: 0.6, delay: 0.9 }}
+                        className="pt-16 flex space-x-6 mr-28 items-center"
+                    >
+                        <List />
+                    </motion.div>
+                </motion.div>
+                
+                {/* Right Section */}
+                <motion.div 
+                    initial={{ opacity: 0, x: 100 }} 
+                    animate={{ opacity: 1, x: 0 }} 
+                    transition={{ duration: 0.8, ease: 'easeOut' }}
+                    className="md:w-1/2 mt-10 md:mt-0 flex justify-center items-center relative"
+                >
+                    <AnimatedCubes />
+                </motion.div>
             </div>
-            
-            <div className="md:w-1/2 mt-10 md:mt-0 flex justify-center items-center relative">
-                <AnimatedCubes />
-            </div>
-          </div>
-    )
+        </div>
+    );
 }
