@@ -3,7 +3,7 @@ import AnimatedCubes from '../components/Cubes'
 
 export default function Landing() {
     return (
-        <section className="h-[90vh] w-full flex flex-col md:flex-row items-center justify-between bg-[#000000] bg-[linear-gradient(to_right,#ffffff15_2px,transparent_2px),linear-gradient(to_bottom,#ffffff15_2px,transparent_2px)] [background-size:30px_30px]">
+        <div className="h-[90vh] w-full flex flex-col md:flex-row items-center justify-between bg-[#000000] bg-[linear-gradient(to_right,#ffffff15_2px,transparent_2px),linear-gradient(to_bottom,#ffffff15_2px,transparent_2px)] [background-size:50px_40px]">
             <div className="md:w-1/2 space-y-6 pl-4 items-center translate-x-64">
 
               <div className="flex items-center backdrop-blur-md bg-white/30 p-1.5 mr-9 rounded-lg w-fit">
@@ -43,6 +43,6 @@ export default function Landing() {
             <div className="md:w-1/2 mt-10 md:mt-0 flex justify-center items-center relative">
                 <AnimatedCubes />
             </div>
-          </section>
+          </div>
     )
 }

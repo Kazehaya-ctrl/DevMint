@@ -1,6 +1,7 @@
 export default function Navbar() {
+  
   return (
-    <nav className=" border-b-2 fixed top-0 z-10 w-full bg-black/50 backdrop-blur-md text-black h-20 px-8 left-0 right-0 border-double border-b-slate-700 shadow-lg">
+    <nav className="border-b-2 fixed top-0 z-10 w-full bg-black/50 backdrop-blur-md text-black h-20 px-8 left-0 right-0 border-double border-b-slate-700 shadow-lg">
       <div className="max-w-7xl mx-auto h-full flex items-center justify-start gap-x-20">
         <div className="flex items-center gap-x-4 -translate-x-20 hover:scale-105 transition">
           <div className="backdrop-blur-md rounded-2xl">
