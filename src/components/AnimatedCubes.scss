@@ -1,0 +1,83 @@
+@use "sass:math";
+
+$d: 2em;
+$n: 7;
+$p: math.pow($n, 2);
+$q: math.pow($n, 3);
+$ax: math.asin(1 / math.sqrt(3));
+$ay: 45deg;
+$t: 1s;
+
+* {
+  margin: 0;
+}
+
+html {
+  overflow: hidden;
+}
+
+body,
+div {
+  display: grid;
+}
+
+body {
+  height: 100vh;
+}
+
+.a3d {
+  --tmp: repeat(var(--n), #{$d});
+  grid-template: var(--tmp) / var(--tmp);
+  place-self: center;
+  transform-style: preserve-3d;
+  transform: rotatex(-1 * $ax) rotatey($ay);
+}
+
+.ball {
+  --m: calc(0.5 * (var(--n) - 1));
+  --sgn-i: clamp(-1, (var(--i) - var(--m)) / 0.5, 1);
+  --sgn-j: clamp(-1, (var(--j) - var(--m)) / 0.5, 1);
+  --sgn-k: clamp(-1, (var(--k) - var(--m)) / 0.5, 1);
+  grid-area: calc(var(--j) + 1) / calc(var(--i) + 1);
+  --pos: translatez(calc((var(--k) - var(--m)) * #{$d}))
+    rotatey(#{-1 * $ay}) rotatex(#{$ax});
+  box-shadow: 0 0 0 2px;
+  background: hsl(0, 0%, calc((1 - var(--j) / var(--n)) * 100%));
+  animation: a $t cubic-bezier(0.32, 1, 0.68, 1) 
+    calc((var(--i) / var(--n) - 1) * #{$t}) infinite alternate;
+}
+
+@keyframes a {
+  0%,
+  25% {
+    transform: var(--pos)
+      translate3d(
+        calc(var(--sgn-i) * var(--x)),
+        calc(var(--sgn-j) * var(--y)),
+        calc(var(--sgn-k) * var(--zf) * #{$d})
+      )
+      scale(0);
+  }
+  75%,
+  100% {
+    border-radius: 50%;
+    transform: var(--pos);
+  }
+}
+
+// Generate styles dynamically
+@for $i from 0 through $n - 1 {
+  .ball:nth-child(#{$n}n + #{$i + 1}) {
+    --i: #{$i};
+  }
+  
+  @for $j from 0 through $n - 1 {
+    .ball:nth-child(n + #{($j * $p) + ($i * $n) + 1}):nth-child(-n + #{($j * $p) + (($i + 1) * $n)}) {
+      --j: #{$i};
+    }
+  }
+  
+  .ball:nth-child(n + #{$p * $i + 1}) {
+    --k: #{$i};
+  }
+}
