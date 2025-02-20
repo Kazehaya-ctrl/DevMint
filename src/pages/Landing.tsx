@@ -3,7 +3,7 @@ import AnimatedCubes from '../components/Cubes'
 
 export default function Landing() {
     return (
-        <main className="min-h-screen w-full flex flex-col md:flex-row items-center justify-between bg-[#000000] bg-[linear-gradient(to_right,#ffffff15_2px,transparent_2px),linear-gradient(to_bottom,#ffffff15_2px,transparent_2px)] [background-size:30px_30px]">
+        <section className="h-[90vh] w-full flex flex-col md:flex-row items-center justify-between bg-[#000000] bg-[linear-gradient(to_right,#ffffff15_2px,transparent_2px),linear-gradient(to_bottom,#ffffff15_2px,transparent_2px)] [background-size:30px_30px]">
             <div className="md:w-1/2 space-y-6 pl-4 items-center translate-x-64">
 
               <div className="flex items-center backdrop-blur-md bg-white/30 p-1.5 mr-9 rounded-lg w-fit">
@@ -30,7 +30,7 @@ export default function Landing() {
                 <button className="bg-white text-black px-6 py-3 text-sm rounded-lg hover:bg-gray-200 hover:scale-105 transition">
                   Explore Work
                 </button>
-                <button className="bg-opacity-10 bg-white/30 text-white backdrop:blur-md text-sm px-6 py-3 rounded-lg hover:bg-opacity-20 hover:scale-105 transition">
+                <button className=" bg-white/30 text-white backdrop-blur-md text-sm px-6 py-3 rounded-lg hover:bg-opacity-20 hover:scale-105 transition">
                   What is Devmint?
                 </button>
               </div>
@@ -43,6 +43,6 @@ export default function Landing() {
             <div className="md:w-1/2 mt-10 md:mt-0 flex justify-center items-center relative">
                 <AnimatedCubes />
             </div>
-          </main>
+          </section>
     )
 }

@@ -1,19 +1,19 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Navbar from './components/Navbar'
 import Landing from './pages/Landing'
+import Section2 from './components/Section2'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <>
+    <div className="w-full h-full overflow-y-auto bg-black">
       <Navbar />
+      <main className="pt-20">
         <Landing />
+        <Section2 />
+      </main>
     </div>
+    </>
   )
 }
-
-export default App
