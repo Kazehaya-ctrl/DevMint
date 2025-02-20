@@ -11,7 +11,7 @@ export default {
       },
       animation: {
         'infinite-scroll': 'infinite-scroll 25s linear infinite',
-        'typing': 'typing 4s steps(7) infinite',
+        'typing': 'typing 4s steps(12) infinite', // Increased from 4s to 6s
         'gradient': 'gradient 15s ease infinite',
         spotlight: "spotlight 2s ease .75s 1 forwards",
       },
@@ -32,9 +32,9 @@ export default {
         },
         'typing': {
             '0%': { width: '0' },
-            '30%': { width: '100%' },
-            '80%': { width: '100%' },
-            '90%': { width: '0' },
+            '20%': { width: '100%' },
+            '40%': { width: '100%' },
+            '60%': { width: '0' },
             '100%': { width: '0' }
         },
         'gradient': {
