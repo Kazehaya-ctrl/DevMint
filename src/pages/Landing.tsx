@@ -5,9 +5,9 @@ import { motion } from 'framer-motion';
 
 export default function Landing() {
     return (
-      <div className="h-screen w-full flex items-center justify-center bg-[#000000] bg-[linear-gradient(to_right,#ffffff15_2px,transparent_2px),linear-gradient(to_bottom,#ffffff15_2px,transparent_2px)] [background-size:50px_40px]">
+      <div className="min-h-[80vh] w-full flex items-center justify-center bg-[#000000] bg-[linear-gradient(to_right,#ffffff15_2px,transparent_2px),linear-gradient(to_bottom,#ffffff15_2px,transparent_2px)] [background-size:50px_40px]">
 
-            <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-6xl">
+            <div className="flex mt-10 flex-col md:flex-row md:space-x-12 items-center justify-center w-full max-w-6xl">
                 {/* Left Section */}
                 <motion.div 
                     initial={{ opacity: 0, x: -100 }} 
