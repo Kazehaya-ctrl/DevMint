@@ -18,31 +18,31 @@ const services = [
   {
     title: "UI/UX Design",
     description: "Crafting intuitive and visually stunning experiences.",
-    image: "/images/ui-ux.jpg",
+    image: "./images/uiux.jpg",
   },
   {
     title: "Web Development",
     description: "Building modern, scalable, and high-performance websites.",
-    image: "/images/web-development.jpg",
+    image: "./images/webd.jpg",
   },
   {
     title: "Android/iOS App Development",
     description: "Creating seamless mobile applications for all platforms.",
-    image: "/images/app-development.jpg",
+    image: "./images/androidios.jpg",
   },
   {
     title: "Logo Design",
     description: "Designing memorable and impactful brand identities.",
-    image: "/images/logo-design.jpg",
+    image: "./images/logod.jpg",
   },
   {
     title: "Graphic Design",
     description: "Bringing ideas to life through creative visuals.",
-    image: "/images/graphic-design.jpg",
+    image: "./images/graphicdesign.jpg",
   },
   {
     title: "Video Editing",
     description: "Crafting engaging and dynamic video content.",
-    image: "/images/video-editing.jpg",
+    image: "./images/videodesign.jpg",
   },
 ];

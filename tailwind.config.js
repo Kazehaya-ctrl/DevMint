@@ -21,32 +21,32 @@ export default {
   				'serif'
   			]
   		},
-		animate: {
-			slidein: "slidein 1s ease 300ms",
-		},
+  		animate: {
+  			slidein: 'slidein 1s ease 300ms'
+  		},
   		animation: {
   			'infinite-scroll': 'infinite-scroll 25s linear infinite',
   			typing: 'typing 4s steps(12) infinite',
   			gradient: 'gradient 15s ease infinite',
   			spotlight: 'spotlight 2s ease .75s 1 forwards',
-			scroll: "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+  			scroll: 'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite'
   		},
   		keyframes: {
-			scroll: {
-				to: {
-				  transform: "translate(calc(-50% - 0.5rem))",
-				},
-			},
-			slidein: {
-				from: {
-				  opacity: "0",
-				  transform: "translateY(-10px)",
-				},
-				to: {
-				  opacity: "1",
-				  transform: "translateY(0)",
-				},
-			  },
+  			scroll: {
+  				to: {
+  					transform: 'translate(calc(-50% - 0.5rem))'
+  				}
+  			},
+  			slidein: {
+  				from: {
+  					opacity: '0',
+  					transform: 'translateY(-10px)'
+  				},
+  				to: {
+  					opacity: '1',
+  					transform: 'translateY(0)'
+  				}
+  			},
   			spotlight: {
   				'0%': {
   					opacity: 0,

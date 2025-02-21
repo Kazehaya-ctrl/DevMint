@@ -63,14 +63,14 @@ export default function Landing() {
                     </motion.div>
                     
                     {/* List Component */}
-                    <motion.div 
+                    {/* <motion.div 
                         initial={{ opacity: 0, y: 20 }} 
                         animate={{ opacity: 1, y: 0 }} 
                         transition={{ duration: 0.6, delay: 0.9 }}
                         className="pt-16 flex space-x-6 mr-28 items-center"
                     >
                         <List />
-                    </motion.div>
+                    </motion.div> */}
                 </motion.div>
                 
                 {/* Right Section */}
@@ -80,7 +80,7 @@ export default function Landing() {
                     transition={{ duration: 0.8, ease: 'easeOut' }}
                     className="md:w-1/2 mt-10 md:mt-0 flex justify-center items-center relative"
                 >
-                    <AnimatedCubes />
+                    {/* <AnimatedCubes /> */}
                 </motion.div>
             </div>
         </div>

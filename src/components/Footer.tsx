@@ -71,7 +71,7 @@ export default function Footer() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.6 }}
-          className="mt-6 md:mt-0 text-center md:text-left"
+          className="mt-6 md:mt-0 text-center md:text-left "
         >
           <h3 className="text-lg font-semibold text-center">Quick Contact</h3>
           <p className="text-gray-400 text-sm mt-2">

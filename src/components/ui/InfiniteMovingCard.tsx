@@ -1,47 +1,130 @@
-import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
+import React, { useEffect, useState } from "react";
 
-export function InfiniteMovingCards({
+export const InfiniteMovingCards = ({
   items,
-  direction = "right",
-  speed = "slow",
+  direction = "left",
+  speed = "fast",
+  pauseOnHover = true,
+  className,
 }: {
-  items: any[];
-  direction?: "right" | "left";
-  speed?: "slow" | "fast";
-}) {
-  const duplicatedItems = [...items, ...items]; 
+  items: {
+    title: string;
+    description: string;
+    image: string;
+  }[];
+  direction?: "left" | "right";
+  speed?: "fast" | "normal" | "slow";
+  pauseOnHover?: boolean;
+  className?: string;
+}) => {
+  const containerRef = React.useRef<HTMLDivElement>(null);
+  const scrollerRef = React.useRef<HTMLUListElement>(null);
 
+  useEffect(() => {
+    addAnimation();
+  }, []);
+  const [start, setStart] = useState(false);
+  function addAnimation() {
+    if (containerRef.current && scrollerRef.current) {
+      const scrollerContent = Array.from(scrollerRef.current.children);
+
+      scrollerContent.forEach((item) => {
+        const duplicatedItem = item.cloneNode(true);
+        if (scrollerRef.current) {
+          scrollerRef.current.appendChild(duplicatedItem);
+        }
+      });
+
+      getDirection();
+      getSpeed();
+      setStart(true);
+    }
+  }
+  const getDirection = () => {
+    if (containerRef.current) {
+      if (direction === "left") {
+        containerRef.current.style.setProperty(
+          "--animation-direction",
+          "forwards"
+        );
+      } else {
+        containerRef.current.style.setProperty(
+          "--animation-direction",
+          "reverse"
+        );
+      }
+    }
+  };
+  const getSpeed = () => {
+    if (containerRef.current) {
+      if (speed === "fast") {
+        containerRef.current.style.setProperty("--animation-duration", "20s");
+      } else if (speed === "normal") {
+        containerRef.current.style.setProperty("--animation-duration", "40s");
+      } else {
+        containerRef.current.style.setProperty("--animation-duration", "80s");
+      }
+    }
+  };
   return (
-    <div className="relative flex overflow-hidden w-full">
-      <motion.div
-        className="flex min-w-max space-x-6"
-        animate={{
-          x: direction === "right" ? ["0%", "-100%"] : ["-100%", "0%"],
-        }}
-        transition={{
-          repeat: Infinity,
-          duration: speed === "slow" ? 20 : 10, 
-          ease: "linear",
-        }}
+    <div
+      ref={containerRef}
+      className={cn(
+        "scroller relative z-20  max-w-[90%] overflow-hidden  [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
+        className
+      )}
+    >
+      <ul
+        ref={scrollerRef}
+        className={cn(
+          " flex min-w-full shrink-0 gap-4 py-4 w-max flex-nowrap",
+          start && "animate-scroll ",
+          pauseOnHover && "hover:[animation-play-state:paused]"
+        )}
       >
-        {duplicatedItems.map((item, index) => (
-          <motion.div
-            key={index}
-            className="relative flex flex-col items-center p-6 min-w-[320px] rounded-lg shadow-lg 
-                      bg-white/10 dark:bg-gray-800/30 backdrop-blur-md border border-white/20"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <img
-              src={item.image}
-              alt={item.title}
-              className="w-24 h-24 object-cover rounded-full mb-4 border-4 border-white/20"
-            />
-            <h3 className="text-xl font-bold text-white">{item.title}</h3>
-            <p className="text-blue-600 text-sm text-center">{item.description}</p>
-          </motion.div>
-        ))}
-      </motion.div>
+       {items.map((item, idx) => (
+  <li
+    className="w-[350px] max-w-full relative rounded-2xl flex-shrink-0 px-8 py-6 md:w-[450px] 
+    group hover:scale-[1.02] transition-all duration-300
+    bg-opacity-10 bg-white backdrop-blur-md
+    border border-opacity-30 border-white
+    shadow-lg"
+    style={{
+      background: `
+        linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.1),
+          rgba(255, 255, 255, 0.05)
+        )
+      `,
+      boxShadow: `
+        0 8px 32px 0 rgba(31, 38, 135, 0.37),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.1)
+      `
+    }}
+    key={idx}
+  >
+    <div className="flex flex-col gap-4 relative z-10">
+      <div className="relative h-[200px] w-full overflow-hidden rounded-xl">
+        <img 
+          src={item.image} 
+          alt={item.title}
+          className="object-cover w-full h-full"
+        />
+      </div>
+      <div>
+        <h3 className="text-xl font-bold text-white mb-2">
+          {item.title}
+        </h3>
+        <p className="text-sm text-slate-200 line-clamp-3">
+          {item.description}
+        </p>
+      </div>
+    </div>
+  </li>
+))}
+      </ul>
     </div>
   );
-}
+};

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { Spotlight } from "./Spotlight";
 import { ReactTyped } from "react-typed";
+import { Vortex } from "./ui/Vortex";
+import { Spotlight } from "./Spotlight";
 
 
 const features = [
@@ -46,9 +47,9 @@ export function Section2() {
             >
                 <ReactTyped 
                     className='text-blue-400 text-lg mx-auto max-w-3xl leading-relaxed' 
-                    strings={["We offer a seamless and structured process designed for your success. Take a look at our approach and discover why we stand out."]} 
+                    strings={["Take a look at our approach and discover why we stand out."]} 
                     typeSpeed={10} 
-                    backSpeed={90} 
+                    backSpeed={100} 
                     loop
                 />
             </motion.div>
