@@ -46,7 +46,7 @@ export function Section2() {
                 className="bg-white/10 backdrop-blur-md p-4 rounded-lg border border-white/20 shadow-md"
             >
                 <ReactTyped 
-                    className='text-blue-400 text-lg mx-auto max-w-3xl leading-relaxed' 
+                    className='text-blue-600 text-lg mx-auto max-w-3xl leading-relaxed' 
                     strings={["Take a look at our approach and discover why we stand out."]} 
                     typeSpeed={10} 
                     backSpeed={100} 
@@ -73,11 +73,11 @@ export function Section2() {
                         }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
                         whileHover={{ scale: 1.07, boxShadow: "0px 0px 25px rgba(255, 255, 255, 0.2)" }}
-                        className="backdrop-blur-md bg-white/10 p-8 rounded-xl border border-white/20 shadow-lg transition-transform"
+                        className="backdrop-blur-md bg-white/10 p-8 rounded-xl border border-white/20 shadow-lg transition-transform hover:text-blue-600"
                     >
                         <div className="text-center">
-                            <h2 className="text-3xl font-semibold mb-4">{feature.title}</h2>
-                            <p className="text-lg text-gray-300">{feature.description}</p>
+                            <h2 className="text-3xl  font-semibold mb-4">{feature.title}</h2>
+                            <p className="text-lg">{feature.description}</p>
                         </div>
                     </motion.div>
                 ))}

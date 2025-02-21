@@ -71,7 +71,7 @@ export const InfiniteMovingCards = ({
     <div
       ref={containerRef}
       className={cn(
-        "scroller relative z-20  max-w-[90%] overflow-hidden  [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
+        "scroller relative z-20 max-w-[100%] overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
         className
       )}
     >
@@ -110,10 +110,10 @@ export const InfiniteMovingCards = ({
         <img 
           src={item.image} 
           alt={item.title}
-          className="object-cover w-full h-full"
+          className="object-contain hover:scale-105 transition-transform w-full h-13"
         />
       </div>
-      <div>
+      <div >
         <h3 className="text-xl font-bold text-white mb-2">
           {item.title}
         </h3>

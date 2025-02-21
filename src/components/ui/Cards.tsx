@@ -10,21 +10,21 @@ const projects = [
     description:
       "A smart platform for car rentals and carpooling with real-time tracking, AI chat support, and secure payments. Drive or ride, hassle-free! 🚗💨",
     tech: ["Flutter", "App Development", "React", "Web Development"],
-    image: "/images/roulocal.jpg", // Change this to actual image path
+    image: "./roulocal_logo.png",
   },
   {
     title: "Virat",
     description:
       "A feature-rich grocery delivery app offering seamless product search, cart management, order placement, and real-time delivery tracking.",
     tech: ["Flutter", "Dart", "SQL", "Firebase", "Firestore", "Rest API"],
-    image: "/images/virat.jpg", // Change this to actual image path
+    image: "./Virat.png", 
   },
   {
     title: "Vehicle Manager",
     description:
       "An all-in-one app for logistics businesses, enabling truck & vehicle owners to manage trips, documents, payments, and expenses.",
     tech: ["Flutter", "Dart", "SQL", "Rest API", "Firebase", "Firestore"],
-    image: "/images/vehicle-manager.jpg", // Change this to actual image path
+    image: "./VM.png", 
   },
 ];
 
@@ -54,7 +54,7 @@ export default function ProjectCarousel() {
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-48 object-cover rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
+                className="w-full h-80 inset-0 object-cover rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
               />
               
               {/* Project Title */}

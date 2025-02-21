@@ -6,7 +6,7 @@ export default function Navbar() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="border-b-2 fixed top-0 z-10 w-full bg-black/50 backdrop-blur-md text-black h-20 px-8 left-0 right-0 border-double border-b-slate-700 shadow-lg"
+      className="border-b-2 fixed top-0 z-50 w-full bg-black/30 backdrop-blur-md text-black h-20 px-8 left-0 right-0 border-double border-b-slate-700 shadow-lg"
     >
       <div className="max-w-7xl mx-auto h-full flex items-center justify-between">
         {/* Left Section (Logo & Links) */}
