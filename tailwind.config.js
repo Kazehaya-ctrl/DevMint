@@ -1,4 +1,12 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+ 
+const colors = require("tailwindcss/colors");
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
+
 /** @type {import('tailwindcss').Config} */
+
 export default {
     darkMode: ["class"],
     content: [
@@ -20,9 +28,25 @@ export default {
   			'infinite-scroll': 'infinite-scroll 25s linear infinite',
   			typing: 'typing 4s steps(12) infinite',
   			gradient: 'gradient 15s ease infinite',
-  			spotlight: 'spotlight 2s ease .75s 1 forwards'
+  			spotlight: 'spotlight 2s ease .75s 1 forwards',
+			scroll: "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
   		},
   		keyframes: {
+			scroll: {
+				to: {
+				  transform: "translate(calc(-50% - 0.5rem))",
+				},
+			},
+			slidein: {
+				from: {
+				  opacity: "0",
+				  transform: "translateY(-10px)",
+				},
+				to: {
+				  opacity: "1",
+				  transform: "translateY(0)",
+				},
+			  },
   			spotlight: {
   				'0%': {
   					opacity: 0,
@@ -122,3 +146,13 @@ export default {
   plugins: [require("tailwindcss-animate")],
 }
 
+function addVariablesForColors({ addBase, theme }) {
+	let allColors = flattenColorPalette(theme("colors"));
+	let newVars = Object.fromEntries(
+	  Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+	);
+   
+	addBase({
+	  ":root": newVars,
+	});
+}
