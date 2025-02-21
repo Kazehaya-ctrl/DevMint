@@ -1,11 +1,23 @@
-import { Spotlight } from "./Spotlight";
+import ProjectCarousel from "./ui/Cards";
+import { ReactTyped } from "react-typed";
 
 export default function Section4() {
     return (
-        <div className="h-[40rem] rounded-md flex flex-col antialiased bg-black dark:bg-black bg-[url('/images/hexagon-pattern.svg')] bg-cover items-center justify-center relative overflow-hidden">
-            <Spotlight/>
-            <div className="text-white text-5xl">A glimpse into the product that We have built.</div>
-            <h3 className="text-blue-600 p-4">Here are some of the MVPs I've helped founders launch. They all had innovative ideas, and I helped them convert them into reality.</h3>
+        <div className="w-full justify-center items-center flex flex-col bg-black py-20">
+            <div className="text-4xl text-white">A glimpse into the product that</div>
+            <div className="text-blue-700 text-4xl">We built.</div>
+            <div 
+                className="text-white text-lg mx-auto max-w-3xl leading-relaxed mt-10 h-10 flex items-center"
+                style={{ whiteSpace: "nowrap" }} // Prevents text from wrapping
+            > 
+                <ReactTyped  
+                    strings={["We bring innovation to life with our cutting-edge technology and design solutions."]} 
+                    typeSpeed={10} 
+                    backSpeed={90} 
+                    loop
+                />
+            </div>
+            <ProjectCarousel />
         </div>
     );
 }

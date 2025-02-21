@@ -4,6 +4,7 @@ import { InfiniteMovingCards } from "./ui/InfiniteMovingCard";
 export default function InfiniteMovingCardsDemo() {
   return (
     <div className="h-[40rem] rounded-md flex flex-col antialiased bg-black dark:bg-black bg-[url('/images/hexagon-pattern.svg')] bg-cover items-center justify-center relative overflow-hidden">
+      <div className="text-white text-5xl p-9"> Our Services</div>
         <Spotlight/>
         <div className="relative w-full overflow-x-hidden">
             <InfiniteMovingCards items={services} direction="right" speed="slow" />

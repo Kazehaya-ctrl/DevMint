@@ -38,7 +38,7 @@ export function InfiniteMovingCards({
               className="w-24 h-24 object-cover rounded-full mb-4 border-4 border-white/20"
             />
             <h3 className="text-xl font-bold text-white">{item.title}</h3>
-            <p className="text-gray-300 text-sm text-center">{item.description}</p>
+            <p className="text-blue-600 text-sm text-center">{item.description}</p>
           </motion.div>
         ))}
       </motion.div>
