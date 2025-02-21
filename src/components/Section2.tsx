@@ -4,6 +4,7 @@ import { Vortex } from "./ui/Vortex";
 import { Spotlight } from "./Spotlight";
 import { Cover } from "./ui/Cover";
 import { TextGenerateEffect } from "./Textgenerator";
+import { CardSpotlight } from "./ui/CardSpotlight";
 
 
 const features = [
@@ -61,21 +62,12 @@ export function Section2() {
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-6 max-w-7xl mt-10 animate-slidein [--slidein-delay:700ms]"
             >
                 {features.map((feature) => (
-                    <motion.div 
-                        key={feature.id} 
-                        variants={{
-                            hidden: { opacity: 0, y: 50 },
-                            visible: { opacity: 1, y: 0 }
-                        }}
-                        transition={{ duration: 0.6, ease: "easeOut" }}
-                        whileHover={{ scale: 1.07, boxShadow: "0px 0px 25px rgba(255, 255, 255, 0.2)" }}
-                        className="backdrop-blur-md bg-white/10 p-8 rounded-xl border border-white/20 shadow-lg transition-transform hover:text-blue-600"
-                    >
+                    <CardSpotlight>
                         <div className="text-center">
                             <h2 className="text-3xl  font-semibold mb-4">{feature.title}</h2>
                             <p className="text-lg">{feature.description}</p>
                         </div>
-                    </motion.div>
+                    </CardSpotlight>
                 ))}
             </motion.div>
         </motion.div>

@@ -1,5 +1,3 @@
-import List from '../components/List';
-import AnimatedCubes from '../components/Cubes';
 import { ReactTyped } from 'react-typed';
 import { motion } from 'framer-motion';
 import { Spotlight } from '../components/Spotlight';
@@ -75,13 +73,29 @@ export default function Landing() {
                 
                 {/* Right Section */}
                 <motion.div 
-                    initial={{ opacity: 0, x: 100 }} 
-                    animate={{ opacity: 1, x: 0 }} 
-                    transition={{ duration: 0.8, ease: 'easeOut' }}
-                    className="md:w-1/2 mt-10 md:mt-0 flex justify-center items-center relative"
-                >
-                    {/* <AnimatedCubes /> */}
-                </motion.div>
+    initial={{ opacity: 0, x: 100 }} 
+    animate={{ opacity: 1, x: 0 }} 
+    transition={{ duration: 0.8, ease: 'easeOut' }}
+    className="md:w-1/2 mt-10 md:mt-0 flex justify-center items-center relative"
+>
+    {/* Layered Gradient Effect */}
+    <div className="absolute -inset-20 w-[250%] h-[250%]">
+        {/* Strong Glow */}
+        <div className="absolute inset-0 bg-gradient-radial from-blue-500 via-purple-500 to-transparent blur-[200px] opacity-100 animate-pulse"></div>
+        {/* Extra Layer for Depth */}
+        <div className="absolute inset-0 bg-gradient-radial from-purple-500 via-pink-500 to-transparent blur-[150px] opacity-80 animate-pulse"></div>
+    </div>
+    
+    {/* Image with Glow */}
+    <img 
+        src="./cube.png" 
+        alt="Cube" 
+        className="relative z-10 w-[80%] object-contain hover:scale-110 transition-transform duration-300" 
+    />
+</motion.div>
+
+
+
             </div>
         </div>
     );
