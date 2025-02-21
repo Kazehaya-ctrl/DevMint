@@ -68,24 +68,25 @@ export default function Footer() {
 
         {/* Quick Contact */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7, duration: 0.6 }}
-          className="mt-6 md:mt-0 text-center md:text-left "
-        >
-          <h3 className="text-lg font-semibold text-center">Quick Contact</h3>
-          <p className="text-gray-400 text-sm mt-2">
-            Have questions? Reach out anytime. We're here to help your projects succeed.
-          </p>
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ duration: 0.2 }}
-            className="mt-4 px-5 py-2 rounded-xl bg-white/10 hover:bg-white/20 transition-all duration-300"
-          >
-            Contact Us
-          </motion.button>
-        </motion.div>
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.7, duration: 0.6 }}
+  className="mt-6 md:mt-0 text-center md:text-left flex flex-col items-center justify-center"
+>
+  <h3 className="text-lg font-semibold text-center">Quick Contact</h3>
+  <p className="text-gray-400 text-sm mt-2 text-center max-w-md">
+    Have questions? Reach out anytime. We're here to help your projects succeed.
+  </p>
+  <motion.button
+    whileHover={{ scale: 1.1 }}
+    whileTap={{ scale: 0.95 }}
+    transition={{ duration: 0.2 }}
+    className="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+  >
+    Contact Us
+  </motion.button>
+</motion.div>
+
       </div>
 
       {/* Footer Bottom */}

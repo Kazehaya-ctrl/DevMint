@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { ReactTyped } from "react-typed";
 import { Vortex } from "./ui/Vortex";
 import { Spotlight } from "./Spotlight";
+import { Cover } from "./ui/Cover";
+import { TextGenerateEffect } from "./Textgenerator";
 
 
 const features = [
@@ -43,15 +45,9 @@ export function Section2() {
                 initial={{ opacity: 0 }} 
                 animate={{ opacity: 1 }} 
                 transition={{ duration: 1, delay: 0.4 }}
-                className="bg-white/10 backdrop-blur-md p-4 rounded-lg border border-white/20 shadow-md"
+                className="p-4 shadow-md"
             >
-                <ReactTyped 
-                    className='text-blue-600 text-lg mx-auto max-w-3xl leading-relaxed' 
-                    strings={["Take a look at our approach and discover why we stand out."]} 
-                    typeSpeed={10} 
-                    backSpeed={100} 
-                    loop
-                />
+                <Cover><TextGenerateEffect words={"Take a look at our approach and discover why we stand out."}/></Cover>
             </motion.div>
 
             {/* Feature Boxes (3x3 Grid Layout) */}

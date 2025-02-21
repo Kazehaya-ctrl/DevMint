@@ -31,12 +31,15 @@ export const TextGenerateEffect = ({
 
   const renderWords = () => {
     return (
-      <motion.div ref={scope}>
+      <motion.div 
+        ref={scope}
+        className="group hover:text-white transition-colors duration-300"
+      >
         {wordsArray.map((word, idx) => {
           return (
             <motion.span
               key={word + idx}
-              className="dark:text-white text-black opacity-0"
+              className="dark:text-white text-blue-600 opacity-0 transition-colors duration-300 group-hover:text-white"
               style={{
                 filter: filter ? "blur(10px)" : "none",
               }}
