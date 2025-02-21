@@ -73,29 +73,27 @@ export default function Landing() {
                 
                 {/* Right Section */}
                 <motion.div 
-    initial={{ opacity: 0, x: 100 }} 
-    animate={{ opacity: 1, x: 0 }} 
-    transition={{ duration: 0.8, ease: 'easeOut' }}
-    className="md:w-1/2 mt-10 md:mt-0 flex justify-center items-center relative"
->
-    {/* Layered Gradient Effect */}
-    <div className="absolute -inset-20 w-[250%] h-[250%]">
-        {/* Strong Glow */}
-        <div className="absolute inset-0 bg-gradient-radial from-blue-500 via-purple-500 to-transparent blur-[200px] opacity-100 animate-pulse"></div>
-        {/* Extra Layer for Depth */}
-        <div className="absolute inset-0 bg-gradient-radial from-purple-500 via-pink-500 to-transparent blur-[150px] opacity-80 animate-pulse"></div>
-    </div>
-    
-    {/* Image with Glow */}
-    <img 
-        src="./cube.png" 
-        alt="Cube" 
-        className="relative z-10 w-[80%] object-contain hover:scale-110 transition-transform duration-300" 
-    />
-</motion.div>
+                    initial={{ opacity: 0, x: 100 }} 
+                    animate={{ opacity: 1, x: 0 }} 
+                    transition={{ duration: 0.8, ease: 'easeOut' }}
+                    className="md:w-1/2 mt-10 md:mt-0 flex justify-center items-center relative"
+                >
+                    {/* Dual-Color Edge Bloom Effect */}
+                    <div className="absolute w-full h-full">
+                        <div className="absolute inset-0 w-full h-full bg-gradient-radial 
+                                        from-transparent via-blue-500 to-purple-500 
+                                        blur-[80px] opacity-80 mask-image-radial"></div>
+                    </div>
 
-
-
+                    {/* Image with Blue & Purple Blooming Edges */}
+                    <img 
+                        src="./cube.png" 
+                        alt="Cube" 
+                        className="relative z-10 w-[80%] object-contain 
+                                drop-shadow-[0_0_40px_rgba(0,0,255,0.7)] 
+                                transition-transform duration-300 hover:scale-105" 
+                    />
+                </motion.div>
             </div>
         </div>
     );

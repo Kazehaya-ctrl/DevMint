@@ -1,7 +1,4 @@
 import { motion } from "framer-motion";
-import { ReactTyped } from "react-typed";
-import { Vortex } from "./ui/Vortex";
-import { Spotlight } from "./Spotlight";
 import { Cover } from "./ui/Cover";
 import { TextGenerateEffect } from "./Textgenerator";
 import { CardSpotlight } from "./ui/CardSpotlight";
@@ -28,7 +25,7 @@ export function Section2() {
             className="w-full text-white py-16 flex flex-col items-center bg-black backdrop-blur-lg bg-opacity-30 border border-white/10 shadow-xl"
         >
             {/* Spotlight Effect */}
-            <Spotlight />
+            {/* <Spotlight /> */}
 
             {/* Title */}
             <motion.h1 

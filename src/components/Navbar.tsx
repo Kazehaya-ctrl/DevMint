@@ -28,7 +28,7 @@ export default function Navbar() {
               <motion.a
                 key={index}
                 href="#"
-                whileHover={{ scale: 1.1, color: "#ccc" }}
+                whileHover={{ scale: 1.3, color: "#ccc" }}
                 transition={{ type: "spring", stiffness: 300 }}
                 className="hover:text-gray-500 transition"
               >
