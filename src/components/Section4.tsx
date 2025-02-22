@@ -75,14 +75,15 @@ export default function Section4() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.7 }}
-                    className="text-white text-xl font-bold max-w-3xl mt-10 text-center"
+                    className="text-white text-2xl max-w-3xl mt-10 text-center"
                 > 
-                    <ColourfulText text="We bring innovation to life with cutting technology and design solutions."/>
+                    <ColourfulText text="We bring innovation to life with our cutting technology and design solutions."/>
                 </motion.div>
                 <div className="w-full mt-16">
                     <ProjectCarousel />
                 </div>
             </motion.div>
+            {/* <BouncingCube/> */}
         </motion.div>
     );
 }

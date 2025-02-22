@@ -1,5 +1,4 @@
-"use client";
-
+import "./css/TwinkleStar.css"
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { IconArrowNarrowRight } from "@tabler/icons-react";
@@ -45,36 +44,37 @@ export default function ProjectCarousel() {
         >
           {projects.map((project, index) => (
             <motion.div
-              key={index}
-              className="min-w-full p-6 rounded-2xl border border-white/20 shadow-lg 
-                         bg-white/10 backdrop-blur-lg text-white flex flex-col items-center"
-              whileHover={{ scale: 1.05 }}
-            >
-              {/* Project Image */}
+            key={index}
+            className="min-w-full p-6 rounded-2xl border border-white/20 shadow-lg 
+                       bg-black/10 backdrop-blur-lg text-white flex flex-col items-center
+                       relative overflow-hidden starry-background"
+            whileHover={{ scale: 1.05 }}
+          >
+            {/* Star Background */}
+            <div className="absolute inset-0 overflow-hidden">
+              <div className="stars-small"></div>
+              <div className="stars-medium"></div>
+              <div className="stars-large"></div>
+            </div>
+          
+            {/* Content with higher z-index */}
+            <div className="relative z-10 flex flex-col items-center w-full">
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-80 inset-0 object-cover rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
+                className="w-full h-80 object-cover rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
               />
-              
-              {/* Project Title */}
               <h2 className="text-2xl font-bold mt-4">{project.title}</h2>
-              
-              {/* Project Description */}
               <p className="text-gray-300 text-center mt-2">{project.description}</p>
-              
-              {/* Tech Stack */}
               <div className="flex flex-wrap gap-2 mt-3">
                 {project.tech.map((tech, i) => (
-                  <span
-                    key={i}
-                    className="px-3 py-1 text-xs bg-white/20 rounded-lg"
-                  >
+                  <span key={i} className="px-3 py-1 text-xs bg-white/20 rounded-lg">
                     {tech}
                   </span>
                 ))}
               </div>
-            </motion.div>
+            </div>
+          </motion.div>
           ))}
         </motion.div>
       </div>

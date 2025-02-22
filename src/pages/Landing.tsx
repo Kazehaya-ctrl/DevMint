@@ -73,27 +73,36 @@ export default function Landing() {
                 
                 {/* Right Section */}
                 <motion.div 
-                    initial={{ opacity: 0, x: 100 }} 
-                    animate={{ opacity: 1, x: 0 }} 
-                    transition={{ duration: 0.8, ease: 'easeOut' }}
-                    className="md:w-1/2 mt-10 md:mt-0 flex justify-center items-center relative"
-                >
-                    {/* Dual-Color Edge Bloom Effect */}
-                    <div className="absolute w-full h-full">
-                        <div className="absolute inset-0 w-full h-full bg-gradient-radial 
-                                        from-transparent via-blue-500 to-purple-500 
-                                        blur-[80px] opacity-80 mask-image-radial"></div>
-                    </div>
+    initial={{ opacity: 0, x: 100 }} 
+    animate={{ opacity: 1, x: 0 }} 
+    transition={{ duration: 0.8, ease: 'easeOut' }}
+    className="md:w-1/2 mt-10 md:mt-0 flex justify-center items-center relative"
+>
+    {/* Dual-Color Edge Bloom Effect */}
+    <div className="absolute w-full h-full">
+        <div className="absolute inset-0 w-full h-full bg-gradient-radial 
+                        from-transparent via-blue-500 to-purple-500 
+                        blur-[80px] opacity-80 mask-image-radial">
+        </div>
+    </div>
 
-                    {/* Image with Blue & Purple Blooming Edges */}
-                    <img 
-                        src="./cube.png" 
-                        alt="Cube" 
-                        className="relative z-10 w-[80%] object-contain 
-                                drop-shadow-[0_0_40px_rgba(0,0,255,0.7)] 
-                                transition-transform duration-300 hover:scale-105" 
-                    />
-                </motion.div>
+    {/* Bouncing Image */}
+    <motion.div
+        animate={{ 
+            y: [0, -20, 0],
+        }}
+        transition={{
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut"
+        }}
+        className="relative z-10"
+    >
+        <img src="./cube.png" alt="" className='relative z-10 w-[80%] object-contain 
+                                drop-shadow-[0_0_40px_rgba(0,65,225,0.8)] 
+                                transition-transform duration-300 hover:scale-105'/>
+    </motion.div>
+</motion.div>
             </div>
         </div>
     );
