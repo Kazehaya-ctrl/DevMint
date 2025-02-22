@@ -23,7 +23,7 @@ export function Section2() {
             initial={{ opacity: 0, y: 50 }} 
             animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 1, ease: "easeOut" }}
-            className="w-full text-white py-16 flex flex-col items-center bg-black backdrop-blur-lg bg-opacity-30 border border-white/10 shadow-xl"
+            className="w-full text-white py-16 flex flex-col items-center bg-black backdrop-blur-lg bg-opacity-30 border border-white/10 shadow-xl px-4"
         >
             {/* Spotlight Effect */}
             <Spotlight />
@@ -34,7 +34,7 @@ export function Section2() {
                 animate={{ opacity: 1, y: 0 }} 
                 transition={{ duration: 0.8, delay: 0 }}
                 whileHover={{ scale: 1.07 }}
-                className="text-5xl font-bold mb-8 animate-slidein [--slidein-delay:300ms] transition-transform"
+                className="text-4xl md:text-5xl font-bold mb-6 md:mb-8 animate-slidein [--slidein-delay:300ms] transition-transform text-center"
             >
                 Why Choose Us?
             </motion.h1>
@@ -44,12 +44,12 @@ export function Section2() {
                 initial={{ opacity: 0 }} 
                 animate={{ opacity: 1 }} 
                 transition={{ duration: 1, delay: 0.4 }}
-                className="p-4 shadow-md"
+                className="p-2 text-lg shadow-md text-center"
             >
                 <Cover><TextGenerateEffect words={"Take a look at our approach and discover why we stand out."}/></Cover>
             </motion.div>
 
-            {/* Feature Boxes (3x3 Grid Layout) */}
+            {/* Feature Boxes (Single Column on Mobile, Grid on Desktop) */}
             <motion.div 
                 initial="hidden"
                 animate="visible"
@@ -57,13 +57,13 @@ export function Section2() {
                     hidden: { opacity: 0 },
                     visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
                 }}
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-6 max-w-7xl mt-10 animate-slidein [--slidein-delay:700ms]"
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 px-4 max-w-7xl mt-8 md:mt-10 animate-slidein [--slidein-delay:700ms]"
             >
                 {features.map((feature) => (
-                    <CardSpotlight>
+                    <CardSpotlight key={feature.id}>
                         <div className="text-center">
-                            <h2 className="text-3xl  font-semibold mb-4">{feature.title}</h2>
-                            <p className="text-lg">{feature.description}</p>
+                            <h2 className="text-xl md:text-3xl font-semibold mb-3 md:mb-4">{feature.title}</h2>
+                            <p className="text-base md:text-lg">{feature.description}</p>
                         </div>
                     </CardSpotlight>
                 ))}
