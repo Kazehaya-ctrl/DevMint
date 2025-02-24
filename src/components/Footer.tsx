@@ -1,8 +1,18 @@
 
 import { motion } from "framer-motion";
+import { useState } from "react";
+import { ContactDialog } from "./ContactDialogueBox";
 
 export default function Footer() {
-  return (
+
+  const [isContactDialogOpen, setIsContactDialogOpen] = useState<boolean>(false)
+
+  const handleContactClick = (e: any) => {
+    e.preventDefault()
+    setIsContactDialogOpen(true)
+  }
+
+  return ( <>
     <motion.footer
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
@@ -81,6 +91,7 @@ export default function Footer() {
     whileHover={{ scale: 1.1 }}
     whileTap={{ scale: 0.95 }}
     transition={{ duration: 0.2 }}
+    onClick={handleContactClick}
     className="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
   >
     Contact Us
@@ -99,5 +110,11 @@ export default function Footer() {
         © 2024 Devmint. All rights reserved.
       </motion.div>
     </motion.footer>
+    <ContactDialog
+        
+        isOpen={isContactDialogOpen} 
+        onClose={() => setIsContactDialogOpen(false)} 
+      />
+    </>
   );
 }

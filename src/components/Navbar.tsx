@@ -8,6 +8,8 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
 
+  
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -22,10 +24,17 @@ export default function Navbar() {
     setIsMobileMenuOpen(false);
   };
 
+  const handleScroll = (id: string) => {
+    const element = document.getElementById(id)
+    if (element) {
+      element.scrollIntoView({behavior: 'smooth'})
+    }
+  }
+
   const menuItems = [
-    { text: "Home", href: "#" },
-    { text: "About", href: "#" },
-    { text: "Portfolio", href: "#" },
+    { text: "Home", onClick: () => handleScroll('home') },
+    { text: "About", onClick: () => handleScroll('about') },
+    { text: "Portfolio", onClick: () => handleScroll('portfolio')},
     { text: "Contact", onClick: handleContactClick },
     { text: "FAQ", href: "#" }
   ];

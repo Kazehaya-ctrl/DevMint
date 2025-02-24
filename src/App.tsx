@@ -11,15 +11,21 @@ export default function App() {
     <div className="relative w-screen max-w-[100vw] overflow-x-hidden bg-black">
       <Navbar />
       <main className="relative w-full overflow-x-hidden">
-        <section className="relative min-h-screen w-full pt-20 overflow-x-hidden">
+        <section id="home" className="relative min-h-screen w-full pt-20 overflow-x-hidden">
           <Landing />
+        </section>
+        <section id="about" className="relative w-full overflow-x-hidden">
           <Section2 />
-          <Section3/>
-          <Section4/>
+        </section>
+        <section id="services" className="relative w-full overflow-x-hidden">
+          <Section3 />
+        </section>
+        <section id="portfolio" className="relative w-full overflow-x-hidden">
+          <Section4 />
         </section>
       </main>
-      <Footer/>
+      <Footer />
       <WhatsAppButton />
     </div>
-  )
+  );
 }
