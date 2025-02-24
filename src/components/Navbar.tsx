@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { MoreVertical, X } from "lucide-react";
+import { ContactDialog } from "./ContactDialogueBox";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isContactDialogOpen, setIsContactDialogOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,7 +16,19 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const menuItems = ["Home", "About", "Portfolio", "Contact", "FAQ"];
+  const handleContactClick = (e: any) => {
+    e.preventDefault();
+    setIsContactDialogOpen(true);
+    setIsMobileMenuOpen(false);
+  };
+
+  const menuItems = [
+    { text: "Home", href: "#" },
+    { text: "About", href: "#" },
+    { text: "Portfolio", href: "#" },
+    { text: "Contact", onClick: handleContactClick },
+    { text: "FAQ", href: "#" }
+  ];
 
   const mobileMenuVariants = {
     closed: {
@@ -53,12 +67,13 @@ export default function Navbar() {
               {menuItems.map((item, index) => (
                 <motion.a
                   key={index}
-                  href="#"
+                  href={item.href}
+                  onClick={item.onClick}
                   whileHover={{ scale: 1.3, color: "#ccc" }}
                   transition={{ type: "spring", stiffness: 300 }}
                   className="hover:text-gray-500 transition"
                 >
-                  {item}
+                  {item.text}
                 </motion.a>
               ))}
             </div>
@@ -89,15 +104,21 @@ export default function Navbar() {
           {menuItems.map((item, index) => (
             <motion.a
               key={index}
-              href="#"
+              href={item.href}
+              onClick={item.onClick}
               whileHover={{ scale: 1.05 }}
               className="text-white text-lg text-center py-2 hover:bg-white/10 rounded-lg"
             >
-              {item}
+              {item.text}
             </motion.a>
           ))}
         </div>
       </motion.div>
+
+      {/* Contact Dialog */}
+      <ContactDialog
+        isOpen={isContactDialogOpen} 
+        onClose={() => setIsContactDialogOpen(false)} 
+      />
     </>
-  );
-}
+  )};
