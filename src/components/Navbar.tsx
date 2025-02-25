@@ -34,7 +34,7 @@ export default function Navbar() {
 		{ text: "About", onClick: () => handleScroll("about") },
 		{ text: "Portfolio", onClick: () => handleScroll("portfolio") },
 		{ text: "Contact", onClick: handleContactClick },
-		{ text: "FAQ", href: "#" },
+		{ text: "FAQ", onClick: () => handleScroll("FAQ") },
 	];
 
 	const mobileMenuVariants = {
@@ -81,7 +81,6 @@ export default function Navbar() {
 							{menuItems.map((item, index) => (
 								<motion.a
 									key={index}
-									href={item.href}
 									onClick={item.onClick}
 									whileHover={{ scale: 1.3, color: "#ccc" }}
 									transition={{
@@ -127,7 +126,6 @@ export default function Navbar() {
 					{menuItems.map((item, index) => (
 						<motion.a
 							key={index}
-							href={item.href}
 							onClick={item.onClick}
 							whileHover={{ scale: 1.05 }}
 							className="text-white text-lg text-center py-2 hover:bg-white/10 rounded-lg"

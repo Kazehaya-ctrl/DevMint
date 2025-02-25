@@ -10,21 +10,21 @@ export default function Landing() {
 		}
 	};
 	return (
-		<div className="min-h-screen w-full flex items-center justify-center bg-[#000000] bg-[linear-gradient(to_right,#ffffff15_2px,transparent_2px),linear-gradient(to_bottom,#ffffff15_2px,transparent_2px)] [background-size:50px_40px]">
+		<div className="min-h-screen w-full flex items-center justify-center pt-[3rem] md:pt-[7rem] bg-[#000000] bg-[linear-gradient(to_right,#ffffff15_2px,transparent_2px),linear-gradient(to_bottom,#ffffff15_2px,transparent_2px)] [background-size:50px_40px]">
 			<Spotlight />
-			<div className="flex flex-col md:flex-row items-center justify-center w-full max-w-7xl px-4 md:px-0">
-				{/* Left Section */}
+			<div className="flex flex-col md:flex-row items-center justify-center w-full max-w-7xl px-6 sm:px-8 md:px-12 pt-16 md:pt-0">
+				{/* Left Section - Added consistent padding */}
 				<motion.div
 					initial={{ opacity: 0, x: -100 }}
 					animate={{ opacity: 1, x: 0 }}
 					transition={{ duration: 0.8, ease: "easeOut" }}
-					className="w-full md:w-1/2 space-y-6 text-center md:text-left"
+					className="w-full md:w-1/2 space-y-6 text-center md:text-left pl-2 sm:pl-4 md:pl-6"
 				>
 					<motion.div
 						initial={{ opacity: 0, y: -20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.6, delay: 0.3 }}
-						className="flex items-center backdrop-blur-md bg-white/30 p-1.5 mx-auto md:mx-0 rounded-lg w-fit shadow-lg"
+						className="flex items-center backdrop-blur-md bg-white/30 p-1.5 mx-auto md:mx-0 rounded-lg w-fit shadow-lg mt-8 md:mt-0"
 					>
 						<div className="bg-blue-700 text-xs text-white font-bold px-3 py-1 rounded-md">
 							NEW
@@ -34,8 +34,10 @@ export default function Landing() {
 						</div>
 					</motion.div>
 
-					<h1 className="text-4xl md:text-6xl text-white font-bold leading-tight">
-						Powering Your Creative <br /> Dreams, Embrace <br />
+					<h1 className="text-3xl sm:text-4xl md:text-5xl text-white font-bold leading-tight mt-4 md:mt-0">
+						Powering Your Creative{" "}
+						<br className="hidden sm:block" /> Dreams, Embrace{" "}
+						<br className="hidden sm:block" />
 						<ReactTyped
 							className="text-blue-600"
 							strings={["DEVMINT."]}
@@ -49,7 +51,7 @@ export default function Landing() {
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.6, delay: 0.5 }}
-						className="text-gray-400 max-w-md mx-auto md:mx-0"
+						className="text-gray-400 max-w-md mx-auto md:mx-0 text-sm sm:text-base"
 					>
 						From Software Development to Design Services, we deliver
 						tailored solutions for every visionary idea using
@@ -103,7 +105,7 @@ export default function Landing() {
 					>
 						<img
 							src="./cube.png"
-							alt=""
+							alt="Devmint 3D Cube"
 							className="relative z-10 w-[60%] md:w-[80%] object-contain 
                                             drop-shadow-[0_0_40px_rgba(0,65,225,0.8)] 
                                             transition-transform duration-300 hover:scale-105"
