@@ -11,7 +11,7 @@ export default function Landing() {
 	};
 	return (
 		<div className="min-h-screen w-full flex items-center justify-center pt-[3rem] md:pt-[7rem] bg-[#000000] bg-[linear-gradient(to_right,#ffffff15_2px,transparent_2px),linear-gradient(to_bottom,#ffffff15_2px,transparent_2px)] [background-size:50px_40px]">
-			<Spotlight />
+			{/* <Spotlight /> */}
 			<div className="flex flex-col md:flex-row items-center justify-center w-full max-w-7xl px-6 sm:px-8 md:px-12 pt-16 md:pt-0">
 				{/* Left Section - Added consistent padding */}
 				<motion.div
