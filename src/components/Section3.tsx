@@ -1,4 +1,4 @@
-import { Spotlight } from "./Spotlight";
+// import { Spotlight } from "./Spotlight";
 import { InfiniteMovingCards } from "./ui/InfiniteMovingCard";
 import { motion } from "framer-motion";
 import { ReactTyped } from "react-typed";

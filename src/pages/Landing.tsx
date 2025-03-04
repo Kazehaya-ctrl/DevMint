@@ -1,6 +1,6 @@
 import { ReactTyped } from "react-typed";
 import { motion } from "framer-motion";
-import { Spotlight } from "../components/Spotlight";
+// import { Spotlight } from "../components/Spotlight";
 
 export default function Landing() {
 	const handleClick = (id: string) => {
